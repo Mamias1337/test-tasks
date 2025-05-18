@@ -6,11 +6,11 @@ if len(sys.argv) !=4:
     sys.exit(1)
 
     # Загрузка данных из файлов
-with open(sys.argv[3], "r") as f:
-    values_data = json.load(f)
-
-with open(sys.argv[2], "r") as f:
+with open(sys.argv[1], "r") as f:  # tests.json
     tests_data = json.load(f)
+
+with open(sys.argv[2], "r") as f:  # values.json
+    values_data = json.load(f)
 
     # Преобразуем values в словарь для быстрого доступа
 values_list = {item["id"]: item["value"] for item in values_data["values"]}
