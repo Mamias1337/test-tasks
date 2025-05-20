@@ -1,18 +1,19 @@
 import sys
 
 def circular_mass(n, m):
-    arr = list(range(1, n + 1)) # Создаём список чисел от 1 до n включительно.
+    arr = list(range(1, n + 1))  # Создаём список чисел от 1 до n включительно.
     path = []   # Список, в который будем добавлять элементы в порядке обхода.
     index = 0   # Начальный индекс.
 
     for _ in range(n):      # Повторяем n раз, пока не обойдем все элементы.
         path.append(arr[index])     # Добавляем текущий элемент в результат (путь).
         index = (index + m - 1) % n # Сдвигаемся по кругу на m-1 шагов.
+        if index < 0:  # Обрабатываем отрицательный индекс
+            index += n
 
     return path
 
 if __name__ == "__main__":
-
     # Проверка количества аргументов командной строки.
     if len(sys.argv) != 3:
         print("Использование: python circular_mass.py <n> <m>")
@@ -28,4 +29,4 @@ if __name__ == "__main__":
 
     # Вызов функции circular_mass и вывод результата.
     result = circular_mass(n, m)
-    print("Путь:", ''.join(map(str, result)))
+    print(''.join(map(str, result)))

@@ -15,7 +15,7 @@ if not os.path.exists(file):
 
     #Чтение чисел из файла.
 try:
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file, 'r', encoding='utf-8') as f:
         numbers = [int(line.strip()) for line in f if line.strip().isdigit()]
 
     #Проверка наличия чисел в файле.
@@ -32,8 +32,7 @@ try:
 
     steps = sum(abs(number - closest_number) for number in numbers)
 
-    print(f"Число с минимальной разницей от среднего: {closest_number}")
-    print(f"Общее количество шагов для приведения всех чисел к этому числу: {steps}")
+    print(steps)
 
 except Exception as error:
     print(f"Ошибка при обработке файла: {error}")

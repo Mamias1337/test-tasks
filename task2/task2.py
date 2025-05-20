@@ -54,8 +54,8 @@ if not 1 <= len(point_list) <= 100:
 for point in point_list:
     d = math.sqrt(math.pow(point[0] - center[0], 2) + math.pow(point[1] - center[1], 2))
     if d < radius:
-        print(f"1 - точка [{point[0]};{point[1]}] лежит внутри окружности c центром в точках {center} и радиусом {radius}.")
+        print("1 - точка внутри.")
     if d > radius:
-        print(f"2 - точка [{point[0]};{point[1]}] лежит вне окружности c центром в точках {center} и радиусом {radius}.")
+        print("2 - точка снаружи.")
     if d == radius:
-        print(f"0 - точка [{point[0]};{point[1]}] лежит на окружности c центром в точках {center} и радиусом {radius}.")
+        print("0 - точка лежит на окружности")
